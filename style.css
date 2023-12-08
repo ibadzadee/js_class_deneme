@@ -32,3 +32,28 @@ table {
     padding: 10px 30px;
     font-size: 15px;
 }
+a{
+ text-decoration: none;
+ color: black;
+}
+#info{
+  padding: 20px 60px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+input{
+  width: 200px;
+  padding:5px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  padding: 5px;
+  cursor: pointer;
+}

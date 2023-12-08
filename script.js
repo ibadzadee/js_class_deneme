@@ -8,9 +8,13 @@ fetch(`https://northwind.vercel.app/api/products`)
         table.innerHTML += `
         <tr>
             <td>${element.id}</td>
-            <td>${element.name}</td>
+            <td><a href="./info.html?id=${element.id}">${element.name}</a></td>
             <td>${element.unitPrice}</td>
             <td>${element.unitsInStock}</td>
+            <td>
+            <button><a href="./update.html?id=${element.id}">update</button>
+            <button>delete</button>
+            </td>
         </tr>`
         })
 
@@ -30,9 +34,13 @@ fetch(`https://northwind.vercel.app/api/products`)
                 table.innerHTML += `
                 <tr>
                     <td>${element.id}</td>
-                    <td>${element.name}</td>
+                    <td><a href="./info.html?id=${element.id}">${element.name}</a></td>
                     <td>${element.unitPrice}</td>
                     <td>${element.unitsInStock}</td>
+                    <td>
+                    <button><a href="./update.html?id=${element.id}">update</button>
+                    <button>delete</button>
+                    </td>
                 </tr>`
             })
         })
