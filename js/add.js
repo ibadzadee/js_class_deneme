@@ -11,7 +11,9 @@ addBtn.addEventListener("click" , ()=>{
         error.style.display = "flex"
     }
     else{
+        error.style.display = "none"
         spinner.style.display = "flex"
+
         axios.post(`https://northwind.vercel.app/api/products`,
         {
             name : name.value,
