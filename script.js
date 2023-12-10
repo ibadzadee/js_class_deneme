@@ -1,9 +1,12 @@
 const table = document.querySelector("table")
 const search = document.querySelector("#search")
+const spinner =document.querySelector('.spinner');
+
 
 fetch(`https://northwind.vercel.app/api/products`)
     .then(response => response.json())
     .then(data => {
+        spinner.style.display= 'none';
         data.forEach(element => {
         table.innerHTML += `
         <tr>
@@ -12,8 +15,10 @@ fetch(`https://northwind.vercel.app/api/products`)
             <td>${element.unitPrice}</td>
             <td>${element.unitsInStock}</td>
             <td>
-            <button><a href="./update.html?id=${element.id}">update</button>
-            <button>delete</button>
+            <button onclick="deleteElement(${element.id})" id="delete">Delete</button>
+            </td>
+            <td>
+            <button id ="update"><a href="./update.html?id=${element.id}">Update</button>
             </td>
         </tr>`
         })
@@ -29,6 +34,8 @@ fetch(`https://northwind.vercel.app/api/products`)
                 <th>Name</th>
                 <th>Price</th>
                 <th>Stock</th>
+                <th>Delete</th>
+                <th>Update</th>
             </tr>`
             filtered.forEach(element => {
                 table.innerHTML += `
@@ -38,11 +45,18 @@ fetch(`https://northwind.vercel.app/api/products`)
                     <td>${element.unitPrice}</td>
                     <td>${element.unitsInStock}</td>
                     <td>
-                    <button><a href="./update.html?id=${element.id}">update</button>
-                    <button>delete</button>
+                    <button onclick="deleteElement(${element.id})" id="delete">Delete</button>
+                    </td>
+                    <td>
+                    <button id ="update"><a href="./update.html?id=${element.id}">Update</button>
                     </td>
                 </tr>`
             })
         })
     })
 
+function deleteElement(id){
+    axios.delete(`https://northwind.vercel.app/api/products/${id}`)
+    alert(`${id} nömrəli məhsul uğurla silindi!`)
+    window.location.reload()
+}

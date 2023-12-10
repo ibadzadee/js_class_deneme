@@ -10,9 +10,11 @@
 </head>
 
 <body>
-
-    <input type="search" id="search">
-
+    <div class="top">
+        <input type="search" id="search" placeholder="Ada görə axtar...">
+        <button id="add"><a href="./add.html">+</a></button>
+    </div>
+    <h2>CRUD by API</h2>
     <table>
 
         <tr>
@@ -20,11 +22,22 @@
             <th>Name</th>
             <th>Price</th>
             <th>Stock</th>
-            <th></th>
+            <th>Delete</th>
+            <th>Update</th>
+            
         </tr>
-        
+        <tr style="height: 50px" class="spinner">
+            <td colspan="6" >
+              <div class="spinnerDiv">
+                <span class="loader"><img src="./images/spinner.gif" alt=""></span>
+                Loading...
+              </div>
+            </td>
+          </tr>
+
     </table>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
 </body>
 

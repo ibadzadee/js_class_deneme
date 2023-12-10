@@ -1,4 +1,5 @@
 let id = new URLSearchParams(window.location.search).get("id")  ;
+const spinner =document.querySelector('.spinner');
 
 const table = document.querySelector("table");
 console.log(id); 
@@ -6,6 +7,8 @@ console.log(id);
 fetch(`https://northwind.vercel.app/api/products/${id}`)
 .then(response => response.json())
 .then(element =>{
+    spinner.style.display= 'none';
+
     table.innerHTML += `
     <tr>
     <td>${element.id}</td>
