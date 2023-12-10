@@ -44,4 +44,3 @@ fetch(`https://northwind.vercel.app/api/products/${id}`)
 
 })
 
-{/* <a href="./info.html?id=${element.id}"> */}

@@ -20,31 +20,36 @@
             <th>Stock</th>
             <th></th>
         </tr>
+
         <tr>
-            <td><input type="text" id="name"/></td>
-            <td><input type="text" id="price"/></td>
-            <td><input type="text" id="stock"/></td>
+            <td><input type="text" id="name" /></td>
+            <td><input type="text" id="price" /></td>
+            <td><input type="text" id="stock" /></td>
             <td><button id="addNew" class="buttons">Add new product</button></td>
-          </tr>
+        </tr>
 
     </table>
 
     <div class="spinnerDiv" style="display: none">
-    <span class="loader"><img src="./images/spinner.gif" alt=""></span>
-    Loading...
-  </div>
-      <div id="done">
-        <img src="./images/done.png"><p>Məhsul uğurla əlavə olundu. Əsas səhifəyə yönləndirilir...</p>
-      </div>
-      <div id="error">
-        <img src="./images/error.png"><p>Bütün xanaları doldurmaq mütləqdir!</p>
-      </div>
+        <span class="loader"><img src="./images/spinner.gif" alt=""></span>
+        Loading...
+    </div>
 
-    <button id = "return"><a href='/'> Əsas səhifəyə qayıt 🔙 </a></button>
+    <div id="done">
+        <img src="./images/done.png">
+        <p>Məhsul uğurla əlavə olundu. Əsas səhifəyə yönləndirilir...</p>
+    </div>
+    <div id="error">
+        <img src="./images/error.png">
+        <p>Bütün xanaları doldurmaq mütləqdir!</p>
+    </div>
+
+    <button id="return"><a href='./index.html'> Əsas səhifəyə qayıt 🔙 </a></button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./add.js"></script>
+    <script src="./js/add.js"></script>
+
 </body>
 
 </html>
